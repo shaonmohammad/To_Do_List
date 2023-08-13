@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Completed Tasks</h1>
+   {% if tasks%}
+     
+     <table style="width:50%;margin:20px auto" class = "table table-bordered">
+  <thead>
+    <tr>
+      
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+ 
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+    <tr>
+      
+      
+      <td>{{task.Task_Title}}</td>
+      <td>{{task.Task_Description}}</td>
+      <td>{{task.status_display}}</td>
+
+  
+     {% endfor %}
+     
+    {% else %}
+    <h2 style="text-align:center">No Task Available</h2>
+    {% endif %}
+  
+    
+    
+  </tbody>
+</table>
+{% endblock %}
